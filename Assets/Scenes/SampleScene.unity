@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 24.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 871326265}
   - component: {fileID: 871326264}
   m_Layer: 0
-  m_Name: Outer Wall (2)
+  m_Name: Outer Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 1379562806}
   - component: {fileID: 1379562805}
   m_Layer: 0
-  m_Name: Outer Wall (1)
+  m_Name: Outer Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 1619588365}
   - component: {fileID: 1619588364}
   m_Layer: 0
-  m_Name: Outer Wall (3)
+  m_Name: Outer Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
