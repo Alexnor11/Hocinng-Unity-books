@@ -10,6 +10,7 @@ public class MouseLook : MonoBehaviour
         MouseX = 1,
         MouseY = 2
     }
+    [Tooltip("Список управления")]
     public RotationAxes axes = RotationAxes.MouseXAndY;
     
     [SerializeField, Tooltip("Скорость вращения по горизонтальной плоскости")]
@@ -17,9 +18,9 @@ public class MouseLook : MonoBehaviour
     [SerializeField, Tooltip("Скорость вращения по вертикальной плоскости")]
     private float sensitivityVert = 9.0f;
 
-    [SerializeField, Tooltip("Угол поворота по вертикали минимум")]
+    [SerializeField, Tooltip("Угол поворота вверх")]
     private float minimumVert = -45.0f;
-    [SerializeField, Tooltip("Угол поворота по вертикали Максимум")]
+    [SerializeField, Tooltip("Угол поворота вниз")]
     private float maximumVert = 45.0f;
     
     private float verticalRot = 0;
@@ -27,7 +28,11 @@ public class MouseLook : MonoBehaviour
 
     void Start()
     {
-        
+        Rigidbody body = GetComponent<Rigidbody>();
+        if (body != null)
+        {
+            body.freezeRotation = true;
+        }
     }
 
       void Update()
@@ -46,7 +51,13 @@ public class MouseLook : MonoBehaviour
         }
         else
         {
+            verticalRot -= Input.GetAxis("Mouse Y") * sensitivityVert;
+            verticalRot = Mathf.Clamp(verticalRot, minimumVert, maximumVert);
 
+            float delta = Input.GetAxis("Mouse X") * sensitivityHor;
+            float horixontalRot = transform.localEulerAngles.y + delta;
+
+            transform.localEulerAngles = new Vector3(verticalRot, horixontalRot, 0);
         }
     }
 }
